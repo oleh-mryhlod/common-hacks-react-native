@@ -67,3 +67,12 @@ Text можна огорнути в View після цього в touchableNativ
 
 # FlatList
 якщо Ви використовуєте FlatList то рекомендується використовувати pure компоненти для елементів в FlatList
+
+# FlatList і клавіатура
+якщо є FlatList і textInput для фільтрації(пошуку) елементів, і якшо при зміні даних
+у FlatList автоматично згортається клавіатура, то можна задати пропсу keyboardDismissMode
+для FlatList:
+
+```js
+keyboardDismissMode={!isLoading ? 'on-drag' : 'none'}
+```
