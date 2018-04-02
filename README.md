@@ -1,4 +1,4 @@
-# fixes-crutches
+# Common react native hacks
 
 
 # Запис аудіо/відео
@@ -75,4 +75,17 @@ Text можна огорнути в View після цього в touchableNativ
 
 ```js
 keyboardDismissMode={!isLoading ? 'on-drag' : 'none'}
+```
+
+# android ugly rounded view
+На Android, якщо для rounded View (наприклад borderRadius: 30) з бордером (borderWidth: 5)
+і якщо задати backgroundColor і borderColor одного кольору, то це View буде погано рендеритись,
+буде видно проміжки між бордером і View
+Тоді можна просто через Platform.select здати borderWidth: 0 для Android
+(бордер рендериться всередину, тобто не потрібно збільшувати висоту/ширину View):
+```js
+    borderWidth: Platform.select({
+      ios: 3,
+      android: 0,
+    }),
 ```
