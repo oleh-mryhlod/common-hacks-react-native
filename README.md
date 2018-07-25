@@ -45,7 +45,7 @@ export const highQuality = {
 ```
 
 # borderless для touchableNativeFeedback
-borderless не може не працювати і не знати де йому рендиретись, якшо для батьківського компонента
+borderless може не працювати і не знати де йому рендиретись, якшо для батьківського компонента
 не задано backgroundColor, або borderRadius
 щоб borderless почав працювати, можна до батьківського кмпонента додати радіус 0
 
